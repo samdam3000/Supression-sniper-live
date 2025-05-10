@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 app = Flask(__name__)
 
-MATCH_URL = "https://www.foxsports.com.au/nrl/nrl-premiership/match-centre/NRL20251003"
+MATCH_URL = "https://www.foxsports.com.au/nrl/nrl-premiership/match-centre/NRL20251004"
 API_ENDPOINT = "https://supression-sniper-live.onrender.com"
 
 def detect_phase(clock_str):
@@ -60,3 +60,6 @@ def trigger():
 @app.route("/")
 def health():
     return jsonify({"status": "Live bot active", "api": API_ENDPOINT})
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=10000)
